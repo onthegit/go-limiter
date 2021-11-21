@@ -46,6 +46,9 @@ type Store interface {
 	// limit.
 	Set(ctx context.Context, key string, tokens uint64, interval time.Duration) error
 
+	//SetTokens - configures the number of tokens for future buckets Current buckets are not affected.
+	SetTokens(tokens uint64)
+
 	// Burst adds more tokens to the key's current bucket until the next interval
 	// tick. This will allow the current bucket tick to exceed the maximum number
 	// maximum ticks until the next interval.

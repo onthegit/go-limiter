@@ -32,6 +32,9 @@ func (s *store) Set(_ context.Context, _ string, _ uint64, _ time.Duration) erro
 	return nil
 }
 
+func (s *store) SetTokens(uint64) {
+}
+
 // Burst does nothing.
 func (s *store) Burst(_ context.Context, _ string, _ uint64) error {
 	return nil
