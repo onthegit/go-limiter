@@ -162,6 +162,15 @@ func (s *store) Get(ctx context.Context, key string) (uint64, uint64, error) {
 	return 0, 0, nil
 }
 
+func (s *store) SetTokens(tokens uint64) {
+	if tokens < 1 {
+		tokens = 1
+	}
+	s.dataLock.Lock()
+	s.tokens = tokens
+	s.dataLock.Unlock()
+}
+
 // Set configures the bucket-specific tokens and interval.
 func (s *store) Set(ctx context.Context, key string, tokens uint64, interval time.Duration) error {
 	s.dataLock.Lock()
