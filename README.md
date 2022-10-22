@@ -134,15 +134,8 @@ arbitrary string key.
 
 Memory is the fastest store, but only works on a single container/virtual
 machine since there's no way to share the state.
-[Learn more](https://pkg.go.dev/github.com/onthegit/go-limiter/memorystore).
-
-#### Redis
-
-Redis uses Redis + Lua as a shared pool, but comes at a performance cost.
-[Learn more](https://pkg.go.dev/github.com/sethvargo/go-redisstore).
 
 #### Noop
 
 Noop does no rate limiting, but still implements the interface - useful for
 testing and local development.
-[Learn more](https://pkg.go.dev/github.com/onthegit/go-limiter/noopstore).
